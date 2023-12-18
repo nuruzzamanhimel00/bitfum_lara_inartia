@@ -1,5 +1,8 @@
 <template>
     <div>
+        <Link href="/test">Test</Link>
+        <Link href="/about">About</Link>
+        <br>
         <h1>Test Page</h1>
         <p>This is a test page</p>
         <button @click.prevent="incrementHandler">+</button>
@@ -8,26 +11,20 @@
     </div>
 </template>
 
-<script>
+<script setup>
     import { ref } from 'vue'
-    export default {
-        name:'Test',
-        setup(){
-            const count = ref(0)
+    import { Link } from '@inertiajs/vue3'
 
-            function incrementHandler(){
-                count.value++
-            }
-            function decrementHandler(){
-                count.value--
-            }
-            return {
-                count,
-                incrementHandler,
-                decrementHandler
-            }
-        }
+    const count = ref(0)
+
+    function incrementHandler(){
+        count.value++
     }
+    function decrementHandler(){
+        count.value--
+    }
+         
+    
 </script>
 
 <style lang="scss" scoped>
